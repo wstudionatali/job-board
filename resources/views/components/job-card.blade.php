@@ -8,8 +8,8 @@
 
   <div class="mb-4 flex items-center justify-between text-sm text-slate-500">
     <div class="flex space-x-4">
-      <div>Company Name</div>
-      <div>{{ $job->location }}</div>
+      <div>Company Name:</div>
+      <div class="font-bold">{{ $job->location }}</div>
     </div>
     <div class="flex space-x-1 text-xs">
       <x-tag>
@@ -18,10 +18,10 @@
       <x-tag>{{ $job->category }}</x-tag>
     </div>
   </div>
-
-  <p class="mb-4 text-sm text-slate-500">
-    {!! nl2br(e($job->description)) !!}
-  </p>
-
-  {{ $slot }}
+  @if (isset($description) && $description)
+        {{ $description}}
+  @endif
+  @if (isset($button) && $button )
+        {{ $button }}
+  @endif
 </x-card>
