@@ -24,10 +24,5 @@
       </x-tag>
     </div>
   </div>
-  @if (isset($description) && $description)
-        {{ $description}}
-  @endif
-  @if (isset($button) && $button )
-        {{ $button }}
-  @endif
+  {{ $slot }}
 </x-card>
